@@ -11,9 +11,10 @@ runs:
   using: "composite"
   steps:
     - name: Set up JDK ${{ inputs.java-version }}
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v3
       with:
         java-version: ${{ inputs.java-version }}
+        distribution: 'zulu'
     - name: Install slice2java
       run: |
         sudo apt-get install -y libmcpp-dev
